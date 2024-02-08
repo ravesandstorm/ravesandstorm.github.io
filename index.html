@@ -57,6 +57,19 @@
                 cursor: pointer;
                 z-index: 9999;
             }
+            .light-mode-button button {
+                padding: 10px;
+                border: 2px solid transparent;
+                border-radius: 4px;
+                cursor: pointer;
+                color: #dbdbdb;
+                background-color: #333;
+                transition: box-shadow 1s;
+            }
+    
+            .light-mode-button button:hover {
+                box-shadow: 0 0 30px #f0f0f0;
+            }
     
             .bottom-buttons {
                 margin-top: 50px;
@@ -70,7 +83,7 @@
                 border: 2px solid transparent;
                 border-radius: 4px;
                 cursor: pointer;
-                color: pink;
+                color: rgba(255, 203, 124, 0.829);
                 background-color: #333;
                 transition: border-color 0.45s ease, background-color 1s ease-out, padding 1s ease;
                 
@@ -96,9 +109,9 @@
     </div>
     
     <div class="bottom-buttons">
-        <a href="#" class="button">Please</a>
-        <a href="#" class="button">Stop</a>
-        <a href="#" class="button">Judging</a>
+        <a href="#" class="button">Still</a>
+        <a href="#" class="button">Under</a>
+        <a href="#" class="button">Construction</a>
     </div>
     
     <script>
