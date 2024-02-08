@@ -1,83 +1,109 @@
 <!--               HUB Website 
     Welcome to Satvik's website for all links!           -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #323232;
-            color: #dbdbdb;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            transition: background-color 0.3s ease;
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Your Website</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: #323232;
+                color: #dbdbdb;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                transition: background-color 0.3s ease;
+                border: 4px solid transparent;
+                border-radius: 2px;
+                animation: breathingBorder 20s infinite ease-in-out;
+            }
+            
+            @keyframes breathingBorder {
+                0% {
+                    border-color: #ff0000;
+                    box-shadow: 0 0 20px #ff0000, inset 0 0 20px #ff0000;
+                }
+                25% {
+                    border-color: #00ff00;
+                    box-shadow: 0 0 20px #00ff00, inset 0 0 20px #00ff00;
+                }
+                50% {
+                    border-color: #0000ff;
+                    box-shadow: 0 0 20px #0000ff, inset 0 0 20px #0000ff;
+                }
+                75% {
+                    border-color: #ffff00;
+                    box-shadow: 0 0 20px #ffff00, inset 0 0 20px #ffff00;
+                }
+                100% {
+                    border-color: #ff00ff;
+                    box-shadow: 0 0 20px #ff00ff, inset 0 0 20px #ff00ff;
+                }
+            }
+            
+            .container {
+                max-width: 800px;
+                text-align: center;
+                padding: 20px;
+            }
+    
+            .dark-mode-button {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                cursor: pointer;
+                z-index: 9999;
+            }
+    
+            .bottom-buttons {
+                margin-top: 50px;
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+            }
+    
+            .button {
+                padding: 10px 20px;
+                border: 2px solid transparent;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: border-color 0.3s ease;
+            }
+    
+            .button:hover {
+                border-color: #66ffe6;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <div class="container">
+        <h1>Personal HUB</h1>
+        <p>Welcome to Satvik's links.</p>
+    </div>
+    
+    <div class="dark-mode-button" onclick="toggleDarkMode()">
+        <button>Light? Mode</button>
+    </div>
+    
+    <div class="bottom-buttons">
+        <a href="#" class="button">Please</a>
+        <a href="#" class="button">Stop</a>
+        <a href="#" class="button">Judging</a>
+    </div>
+    
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle('dark-mode');
         }
-
-        .container {
-            max-width: 800px;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .dark-mode-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            z-index: 9999;
-        }
-
-        .bottom-buttons {
-            margin-top: 50px;
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
-        }
-
-        .button {
-            padding: 10px 20px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: border-color 0.3s ease;
-        }
-
-        .button:hover {
-            border-color: #66ffe6;
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <h1>Personal HUB</h1>
-    <p>Welcome to Satvik's links.</p>
-</div>
-
-<div class="dark-mode-button" onclick="toggleDarkMode()">
-    <button>Light? Mode</button>
-</div>
-
-<div class="bottom-buttons">
-    <a href="#" class="button">Please</a>
-    <a href="#" class="button">Stop</a>
-    <a href="#" class="button">Judging</a>
-</div>
-
-<script>
-    function toggleDarkMode() {
-        const body = document.body;
-        body.classList.toggle('dark-mode');
-    }
-</script>
-
-</body>
-</html>
+    </script>
+    
+    </body>
+    </html>
