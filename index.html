@@ -5,7 +5,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Your Website</title>
+        <title>Satvik's HUB!</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
                 justify-content: center;
                 align-items: center;
                 height: 100vh;
-                transition: background-color 0.3s ease;
+                transition: background-color 0.75s ease;
                 border: 2px solid transparent;
                 border-radius: 2px;
                 animation: breathingBorder 30s infinite ease-in-out;
@@ -45,6 +45,7 @@
             
             .container {
                 max-width: 800px;
+                transition: color 1s ease;
                 text-align: center;
                 padding: 20px;
             }
@@ -102,7 +103,17 @@
     <script>
         function toggleDarkMode() {
             const body = document.body;
-            body.classList.toggle('dark-mode');
+            const container = document.querySelector('.container');
+            if (body.classList.contains('dark-mode')) {
+                body.classList.remove('dark-mode');
+                container.style.color = '#333';
+                body.style.backgroundColor = '#dbdbdb';
+            } else {
+                body.classList.add('dark-mode');
+                container.style.color = '#dbdbdb';
+                body.style.backgroundColor = '#333';
+    
+            }
         }
     </script>
     
