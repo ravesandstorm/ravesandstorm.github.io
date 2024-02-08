@@ -1,38 +1,83 @@
+<!--               HUB Website 
+    Welcome to Satvik's website for all links!           -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-/* Style the header */
-.header {
-  padding: 30vh;
-  --text-align: center;
-  background: rgb(35, 127, 185);
-  color: rgb(243, 207, 255);
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s ease;
+        }
 
-/* Increase the font size of the h1 element */
-.header h1 {
-  font-size: 45px;
-}
-.header p{
-  font-size: 25px;
-  text-align: left;
-}
-</style>
+        .container {
+            max-width: 800px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .dark-mode-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .bottom-buttons {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .button:hover {
+            border-color: #ffcc00;
+        }
+    </style>
 </head>
 <body>
 
-<div class="header">
-  <h1>HUB Website</h1>
-  <p>Welcome to Satvik's website for all links!</p>
+<div class="container">
+    <h1>Welcome to Your Website</h1>
+    <p>This is the center-aligned text on your website.</p>
 </div>
+
+<div class="dark-mode-button" onclick="toggleDarkMode()">
+    <button>Toggle Dark Mode</button>
+</div>
+
+<div class="bottom-buttons">
+    <a href="#" class="button">Link 1</a>
+    <a href="#" class="button">Link 2</a>
+    <a href="#" class="button">Link 3</a>
+</div>
+
+<script>
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle('dark-mode');
+    }
+</script>
 
 </body>
 </html>
