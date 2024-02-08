@@ -50,7 +50,7 @@
                 padding: 20px;
             }
     
-            .dark-mode-button {
+            .light-mode-button {
                 position: fixed;
                 top: 20px;
                 right: 20px;
@@ -90,8 +90,8 @@
         <p>Welcome to Satvik's links.</p>
     </div>
     
-    <div class="dark-mode-button" onclick="toggleDarkMode()">
-        <button>Light? Mode</button>
+    <div class="light-mode-button" onclick="toggleDarkMode()">
+        <button> Light? Mode </button>
     </div>
     
     <div class="bottom-buttons">
@@ -104,15 +104,17 @@
         function toggleDarkMode() {
             const body = document.body;
             const container = document.querySelector('.container');
-            if (body.classList.contains('dark-mode')) {
-                body.classList.remove('dark-mode');
-                container.style.color = '#333';
-                body.style.backgroundColor = '#dbdbdb';
-            } else {
-                body.classList.add('dark-mode');
+            const lightModeButton = document.querySelector('.light-mode-button button');
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
                 container.style.color = '#dbdbdb';
                 body.style.backgroundColor = '#333';
-    
+                lightModeButton.textContent = 'Light? Mode';
+            } else {
+                body.classList.add('light-mode');
+                container.style.color = '#333';
+                body.style.backgroundColor = '#dbdbdb';
+                lightModeButton.textContent = 'Dark? Mode';
             }
         }
     </script>
