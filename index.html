@@ -1,30 +1,29 @@
-<!--               HUB Website 
-    Welcome to Satvik's website for all links!           -->
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Satvik's HUB!</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #333;
-                color: #dbdbdb;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-                transition: background-color 0.75s ease;
-                border: 2px solid transparent;
-                border-radius: 2px;
-                animation: breathingBorder 30s infinite ease-in-out;
-            }
-            
-            @keyframes breathingBorder {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satvik's HUB!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            color: #dbdbdb;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.75s ease;
+            border: 2px solid transparent;
+            border-radius: 2px;
+            animation: breathingBorder 30s infinite ease-in-out;
+            overflow: hidden; /* To prevent background image overflow */
+        }
+        
+		@keyframes breathingBorder {
                 0%, 100% {
                     border-color: #ff0000;
                     box-shadow: 0 0 20px #ff0000, inset 0 0 20px #ff0000;
@@ -42,97 +41,158 @@
                     box-shadow: 0 0 20px #ffff00, inset 0 0 20px #ffff00;
                 }
             }
-            
-            .container {
-                max-width: 800px;
-                transition: color 1s ease;
-                text-align: center;
-                padding: 20px;
-            }
-    
-            .light-mode-button {
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                cursor: pointer;
-                z-index: 9999;
-            }
-            .light-mode-button button {
-                padding: 10px;
-                border: 2px solid transparent;
-                border-radius: 4px;
-                cursor: pointer;
-                color: #dbdbdb;
-                background-color: #333;
-                transition: box-shadow 1s;
-            }
-    
-            .light-mode-button button:hover {
-                box-shadow: 0 0 30px #f0f0f0;
-            }
-    
-            .bottom-buttons {
-                margin-top: 50px;
-                display: flex;
-                justify-content: space-around;
-                width: 100%;
-            }
-    
-            .button {
-                padding: 10px 20px;
-                border: 2px solid transparent;
-                border-radius: 4px;
-                cursor: pointer;
-                color: rgba(255, 203, 124, 0.829);
-                background-color: #333;
-                transition: border-color 0.45s ease, background-color 1s ease-out, padding 1s ease;
-                
-            }
-    
-            .button:hover {
-                border-color: #66ffe6;
-                background-color: black;
-                padding: 15px 25px;
-                box-shadow: 0 0 69px #66ffe6;
-            }
-        </style>
-    </head>
-    <body>
-    
-    <div class="container">
-        <h1>Personal HUB</h1>
-        <p>Welcome to Satvik's links.</p>
-    </div>
-    
-    <div class="light-mode-button" onclick="toggleDarkMode()">
-        <button> Light? Mode </button>
-    </div>
-    
-    <div class="bottom-buttons">
-        <a href="#" class="button">Still</a>
-        <a href="" class="button">Under</a>
-        <a href="https://www.youtube.com/watch?v=ayU8vQ08Qnc" class="button">Construction</a>
-    </div>
-    
-    <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            const container = document.querySelector('.container');
-            const lightModeButton = document.querySelector('.light-mode-button button');
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                container.style.color = '#dbdbdb';
-                body.style.backgroundColor = '#333';
-                lightModeButton.textContent = 'Light? Mode';
-            } else {
-                body.classList.add('light-mode');
-                container.style.color = '#333';
-                body.style.backgroundColor = '#dbdbdb';
-                lightModeButton.textContent = 'Dark? Mode';
-            }
+        .background-image-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1; /* Ensure it's behind other elements */
         }
-    </script>
-    
-    </body>
-    </html>
-    
+
+        .background-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            background-image: url('https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1280x720.jpg');
+            background-size: contain; /* Adjusted to cover */
+            opacity: 0.2; /* Adjust the opacity as needed */
+            pointer-events: none; /* This ensures that the background image doesn't intercept mouse events */
+            transition: transform 0.8s ease-out, filter 1s ease-out; /* Add transition for smooth movement */
+        }
+
+        .background-image-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2); /* Adjust opacity as needed */
+        }
+
+        .container {
+            max-width: 800px;
+            transition: color 1s ease;
+            text-align: center;
+            padding: 20px;
+            position: relative; /* Add position relative to position the background image correctly */
+        }
+
+        .light-mode-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            z-index: 9999;
+        }
+
+        .light-mode-button button {
+            padding: 10px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #dbdbdb;
+            background-color: #333;
+            transition: box-shadow 1s;
+        }
+
+        .light-mode-button button:hover {
+            box-shadow: 0 0 30px #f0f0f0;
+        }
+
+        .bottom-buttons {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 4px;
+            cursor: pointer;
+            color: rgba(255, 203, 124, 0.829);
+            background-color: #333;
+            transition: border-color 0.45s ease, background-color 1s ease-out, padding 1s ease;
+        }
+
+        .button:hover {
+            border-color: #66ffe6;
+            background-color: black;
+            padding: 15px 25px;
+            box-shadow: 0 0 69px #66ffe6;
+        }
+        
+        body.light-mode .background-image {
+            filter: invert(100%);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Personal HUB</h1>
+    <p>Welcome to Satvik's links.</p>
+</div>
+
+<div class="light-mode-button" onclick="toggleDarkMode()">
+    <button> Light? Mode </button>
+</div>
+
+<div class="bottom-buttons">
+    <a href="#" class="button">Still</a>
+    <a href="" class="button">Under</a>
+    <a href="https://www.youtube.com/watch?v=ayU8vQ08Qnc" class="button">Construction</a>
+</div>
+
+<div class="background-image-container">
+    <div class="background-image"></div>
+</div>
+
+<script>
+    let timeoutId;
+
+    function resetBackgroundPosition() {
+        const background = document.querySelector(".background-image");
+        background.style.transform = 'translate(-50%, -50%)';
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const background = document.querySelector(".background-image");
+        document.addEventListener("mousemove", function (e) {
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+            background.style.transform = `translate(calc(-50% + ${mouseX * 20}px), calc(-50% + ${mouseY * 20}px))`;
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(resetBackgroundPosition, 500); // Adjust delay as needed
+        });
+    });
+
+    function toggleDarkMode() {
+        const body = document.body;
+        const container = document.querySelector('.container');
+        const lightModeButton = document.querySelector('.light-mode-button button');
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            container.style.color = '#dbdbdb';
+            body.style.backgroundColor = '#333';
+            lightModeButton.textContent = 'Light? Mode';
+        } else {
+            body.classList.add('light-mode');
+            container.style.color = '#333';
+            body.style.backgroundColor = '#dbdbdb';
+            lightModeButton.textContent = 'Dark? Mode';
+        }
+    }
+</script>
+
+</body>
+</html>
