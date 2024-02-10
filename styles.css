@@ -55,8 +55,8 @@ body {
     width: auto;
     height: auto;
     background-image: url('https://images.wallpaperscraft.com/image/single/silhouette_glow_circle_143302_1280x720.jpg');
-    background-size: contain; /* Adjusted to cover */
-    opacity: 0.2; /* Adjust the opacity as needed */
+    background-size: cover; /* covers whole thing */
+    opacity: 0.2;
     pointer-events: none; /* This ensures that the background image doesn't intercept mouse events */
     transition: transform 0.6s ease-out, filter 1s ease-out; /* Add transition for smooth movement */
 }
