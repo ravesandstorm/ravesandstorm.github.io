@@ -74,7 +74,7 @@ body {
 .particle {
     clip-path: polygon(35% 0%,65% 0%,65% 35%,100% 35%,100% 60%,65% 60%,65% 100%,35% 100%,35% 60%,0% 60%,0% 35%,35% 35%);
     position: absolute;
-    background-color: cyan;
+    background-color: rgb(128, 59, 255);
     width: 8px;
     height: 8px;
     border-radius: 50%;
@@ -105,7 +105,7 @@ body {
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 3px solid cyan;
+    border: 3px solid rgb(43, 170, 255);
     border-radius: 50%;
     pointer-events: none;
     animation: splashEffect 0.5s forwards;
