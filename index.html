@@ -156,8 +156,8 @@
     <p>Welcome to Satvik's links.</p>
 </div>
 
-<div class="light-mode-button" onmouseover="playLightModeHoverSound(1)"
-onmouseleave="playLightModeHoverSound(0)"
+<div class="light-mode-button" onmouseover="startLightModeHoverSound()"
+onmouseleave="stopLightModeHoverSound()"
 onclick="toggleDarkMode(); playSwitchSound();">
     <button> Light? Mode </button>
 </div>
@@ -199,15 +199,6 @@ onclick="toggleDarkMode(); playSwitchSound();">
         const hoverSound = document.getElementById('hover-sound');
         hoverSound.currentTime = 0;
         hoverSound.play();
-    }
-
-	function playLightModeHoverSound(x) {
-    	if (x==1){
-        	startLightModeHoverSound();
-        }
-        if (x==0){
-        	stopLightModeHoverSound();
-        }
     }
 
     function startLightModeHoverSound() {
