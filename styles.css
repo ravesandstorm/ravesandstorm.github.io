@@ -11,8 +11,8 @@ body {
     height: 100vh;
     transition: background-color 0.75s ease;
     border: 2px solid transparent;
-    border-radius: 0.34px;
-    animation: breathingBorder 40s infinite ease-in-out;
+    border-radius: 0.2px;
+    animation: breathingBorder 60s infinite ease-in-out;
     overflow: hidden; /* To prevent background image overflow */
 }
 
